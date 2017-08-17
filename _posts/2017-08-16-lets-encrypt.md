@@ -7,14 +7,15 @@ categories: security
 
 <img src="/assets/images/firefox-no-cert.png">
 
-I'm sure that we all have seen this window more than once. To use HTTPS you must
-have an SSL certificate configured.
+I'm sure that we all have seen this window more than once. After you created an app
+with your sweat and tears it's time to deploy it. And to avoid this ugly window
+you will need to acquire SSL certificate that web browser will trust.
 
 In my experience SSL certificates were a pain in the ass. You had to acquire them by buying,
 and you had to configure your http server to use the certificate.
 
 ## Let's encrypt - the game changer
-Let's encrypt is certificate authority. It is a non profit organization that provides
+[Let's encrypt](https://letsencrypt.org/) is certificate authority. It is a non profit organization that provides
 *domain validation certificates* for free.
 
 Even better, it provides free SSL certificates in a fully automated way. It uses
