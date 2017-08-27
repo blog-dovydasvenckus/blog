@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Finding biggest tables in MySQL and PostgreSQL"
+description: How to find biggest tables in MySQL and PostgreSQL relational database systems.
 date:   2017-07-23 19:02:59 +0300
 categories: rdbms
 ---

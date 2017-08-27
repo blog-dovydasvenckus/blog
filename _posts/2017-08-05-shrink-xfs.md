@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Shrinking XFS partition"
+description: Shrinking XFS partition on linux (Ubuntu).
 date:   2017-08-05 23:59:59 +0300
 categories: linux
 ---

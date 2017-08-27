@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Netlify static web site hosting"
+description: Resons why I have chose netlify to host generated static web sites.
 date:   2017-08-17 22:52:15 +0300
 categories: web-hosting
 ---

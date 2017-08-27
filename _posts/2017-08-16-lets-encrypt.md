@@ -1,11 +1,12 @@
 ---
 layout: post
 title:  "Let's encrypt is awesome. Free SSL for everyone!"
+description: Let's encrypt making internet more secure by providing free SSL certificates.
 date:   2017-08-16 22:48:42 +0300
 categories: security
 ---
 
-<img src="/assets/images/firefox-no-cert.png">
+<img src="/assets/images/2017-08-16-lets-encrypt/firefox-no-cert.png">
 
 I'm sure that we all have seen this window more than once. After you created an app
 with your sweat and tears it's time to deploy it. And to avoid this ugly window

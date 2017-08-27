@@ -15,8 +15,7 @@
 # in the templates via {{ site.myvariable }}.
 title: Dovydas Venckus blog
 author: Dovydas Venckus
-description: >
-  Thoughts on java, linux and other geeky topics.
+description: Thoughts on java, linux and other geeky topics.
 baseurl: ""
 url: "http://dovydasvenckus.com"
 
