@@ -98,9 +98,9 @@ Both of these solutions, fixes the problem.
 Even if you're working with legacy project I highly recommend upgrading to
 the latest testing framework version.
 There are some breaking changes, but if you won't upgrade now, the migration will
-be harder in future, when the new framewrok version is released.
+be harder in future, when the new framework version is released.
 
-My coworker has migrated to Hamcrest 2.0 and Mockito 2.1 quite a large project,
+My coworker has migrated quite a large project to Hamcrest 2.0 and Mockito 2.1,
 that is actively developed. He managed to upgrade Mockito and Hamcrest versions
 in a short period of time. There were more than 500 test files that had to be updated,
 because some functionality was removed or changed. This migration turned out fine,
