@@ -210,7 +210,8 @@ These interfaces include:
 * Default garbage collector was changed to G1. [JEP 248](http://openjdk.java.net/jeps/248)
 * Compact Strings [JEP 254](http://openjdk.java.net/jeps/254)
 * Java Platform Logging API [JEP 264](http://openjdk.java.net/jeps/264)
-* Try with resource improvements [JEP 213](http://openjdk.java.net/jeps/213)
+* Try with resource improvements [JEP 213](http://openjdk.java.net/jeps/213).
+  [My blog post on these changes](/java/2017/12/27/java-try-with-resource#java-9-additions)
 
 ## Conclusion
 I have mentioned most notable features. There are probably plenty features
