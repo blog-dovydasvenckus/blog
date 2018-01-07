@@ -65,6 +65,8 @@ My crontab:
 
 This cron job will be run every day at 3 AM.
 
+
+
 ## Some caveats
 I'm not saying that Let's encrypt made other certificate providers obsolete.
 Let's encrypt only provides *domain validation certificates*. They do not provide
@@ -81,6 +83,11 @@ to add support in January of 2018.
 Older Java versions did not trust Let's encrypt certificates by [default](https://community.letsencrypt.org/t/will-the-cross-root-cover-trust-by-the-default-list-in-the-jdk-jre/134/60).
 But it was fixed in Java 7 and Java 8 versions. So if you are running latest revision of
 these version you should be fine.
+
+Automatic certificate renewing does not work when your server is behind [CloudFlare](https://www.cloudflare.com/)
+or other similar services. In that case, renewing certificate involves manual work.
+[This is great article](http://infosec.theos-blog.com/renewing-letsencrypt-certificate-when-using-cloudflare/)
+on renewing certificate, when the server is behind [CloudFlare](https://www.cloudflare.com/).
 
 ## Final thoughts
 I'm really impressed by what Let's encrypt has done. They made HTTPS accessible for everyone.
