@@ -4,6 +4,7 @@ title:  "Lambda != method reference"
 description: Comparison between Java 8 method reference and lambda expression. One pitfall of method reference that you should avoid.
 date:   2016-11-05 00:02:59 +0300
 categories: java
+image: /assets/images/common/thumbnails/java.png
 ---
 
 ## Introduction

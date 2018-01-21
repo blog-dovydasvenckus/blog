@@ -4,6 +4,7 @@ title:  "Java 9 features"
 description: Java 9 features
 date:   2017-10-08 23:45:00 +0300
 categories: java
+image: /assets/images/common/thumbnails/java.png
 ---
 
 ## Java 9 features

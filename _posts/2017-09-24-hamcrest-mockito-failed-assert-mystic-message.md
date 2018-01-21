@@ -4,6 +4,7 @@ title:  "Failed assertThat throwing java.lang.NoSuchMethodError exception when u
 description: How to resolve java.lang.NoSuchMethodError exception, that occurs when using JUnit with Hamcrest and Mockito.
 date:   2017-09-24 17:40:00 +0300
 categories: junit
+image: /assets/images/common/thumbnails/junit-logo.png
 ---
 
 ## Introduction

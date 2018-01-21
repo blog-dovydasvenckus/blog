@@ -4,6 +4,7 @@ title:  "Finding biggest tables in MySQL and PostgreSQL"
 description: How to find biggest tables in MySQL and PostgreSQL relational database systems.
 date:   2017-07-23 19:02:59 +0300
 categories: rdbms
+image: /assets/images/common/thumbnails/rdbms.png
 ---
 
 In relational database systems we store large amounts of data.
