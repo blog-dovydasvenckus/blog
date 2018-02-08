@@ -5,15 +5,10 @@ baseurl: ""
 url: "https://www.dovydasvenckus.com"
 
 google_analytics: UA-73434879-1
+comments: true
 disqus:
   shortname: dovydasvenckus
 
-twitter_username: dovydasvenck
-github_username:  dovydasvenckus
-social:
-  name: Dovydas Venckus
-  links:
-    www.linkedin.com/in/dovydas-venckus
 
 theme: jekyll-whiteglass
 plugins:
