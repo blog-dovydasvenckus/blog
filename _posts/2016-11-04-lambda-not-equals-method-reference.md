@@ -7,7 +7,6 @@ categories: java
 image: /assets/images/common/thumbnails/java.png
 ---
 
-## Introduction
 Most of the IDE's give you hints, that you could replace lambdas with method references.
 But there is a subtle difference between them.
 

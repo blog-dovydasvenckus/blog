@@ -9,6 +9,7 @@ comments: true
 disqus:
   shortname: dovydasvenckus
 
+twitter_username: dovydasvenck
 
 theme: jekyll-whiteglass
 plugins:

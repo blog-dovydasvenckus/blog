@@ -6,7 +6,6 @@ date:   2017-08-17 22:52:15 +0300
 categories: web-hosting
 ---
 
-## Introduction
 Static site generators are really good for blogging sites. You generate site once
 and you simply serve generated HTML files using HTTP server.
 

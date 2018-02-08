@@ -7,8 +7,7 @@ categories: java
 image: /assets/images/common/thumbnails/java.png
 ---
 
-## Shooting myself in the foot with orElse
-[Optionals](https://docs.oracle.com/javase/9/docs/api/java/util/Optional.htm)
+[Optionals](https://docs.oracle.com/javase/9/docs/api/java/util/Optional.html)
  are really cool Java 8 feature. But it works differently than I thought.
 So I'll show how I have shot my own leg when working with `orElse`.
 

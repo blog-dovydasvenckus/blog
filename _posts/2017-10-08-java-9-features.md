@@ -7,7 +7,6 @@ categories: java
 image: /assets/images/common/thumbnails/java.png
 ---
 
-## Java 9 features
 Java 9 is a major release, which brings highly anticipated modularization.
 
 I'm late to Java 9 feature release party. But I'll try to list all features that
