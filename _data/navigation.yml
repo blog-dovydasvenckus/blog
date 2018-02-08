@@ -3,5 +3,11 @@ main:
     url: /about/
   - title: "Archives"
     url: /archives/
-  - title: "GitHub"
+  - title: "<img src='/assets/images/common/icons/github.svg'></img>"
     url: https://github.com/dovydasvenckus
+  - title: "<img src='/assets/images/common/icons/twitter.svg'></img>"
+    url: https://twitter.com/dovydasvenck
+  - title: "<img src='/assets/images/common/icons/linkedin.svg'></img>"
+    url: https://www.linkedin.com/in/dovydas-venckus
+  - title: "<img src='/assets/images/common/icons/instagram.svg'></img>"
+    url: https://www.instagram.com/dovydasvenckus/
