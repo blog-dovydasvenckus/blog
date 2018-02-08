@@ -7,8 +7,6 @@ categories: linux
 image: /assets/images/common/thumbnails/tux.png
 ---
 
-## Problem
-
 XFS is a fairly popular file system on Linux.
 
 Ability to shrink partitions might be useful in cases when you need to shrink one partition

@@ -7,7 +7,6 @@ categories: junit
 image: /assets/images/common/thumbnails/junit-logo.png
 ---
 
-## Introduction
 From the start of my career, I have preferred Spock for writing tests.
 While working with legacy systems I have written few JUnit tests here and there.
 But my knowledge JUnit, Hamcrest and Mockito is fairly limited.

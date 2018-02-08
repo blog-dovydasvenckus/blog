@@ -7,7 +7,6 @@ categories: rest
 image: /assets/images/common/thumbnails/java.png
 ---
 
-## Introduction
 In this tutorial I'll show how to setup REST web service using Jersey on
 embedded Jetty server. For build tool I'll be using [Gradle](https://gradle.org/).
 Also, we will package up this application as fatjar, single executable Jar for easy deployment.
