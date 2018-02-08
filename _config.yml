@@ -30,12 +30,26 @@ social:
   links:
     www.linkedin.com/in/dovydas-venckus
 
-# Build settings
-theme: minima
+theme: jekyll-whiteglass
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-archives
+  - jekyll-paginate
 exclude:
   - Gemfile
   - Gemfile.lock
+
+permalink: /:year/:month/:day/:title/
+paginate_path: /posts/:num/
+paginate: 5
+
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layout: category_archives
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
