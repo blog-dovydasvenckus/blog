@@ -22,7 +22,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-permalink: /:category/:year/:month/:day/:title/
+permalink: /:categories/:year/:month/:day/:title/
 paginate_path: /posts/:num/
 paginate: 10
 
