@@ -7,11 +7,11 @@ categories: rdbms
 image: /assets/images/common/thumbnails/rdbms.png
 ---
 
-In relational database systems we store large amounts of data.
-Ability to find biggest tables in a database is quite useful, when you are searching
+In relational database systems, we store large amounts of data.
+Ability to find biggest tables in a database is quite useful when you are searching
 where your precious disk space is being used.
 
-In this blog post I'll show how to list biggest tables in MariaDB and PostgreSQL.
+In this blog post, I'll show how to list biggest tables in MariaDB and PostgreSQL.
 
 ## MariaDB/MySQL
 In MySQL and MariaDB information about table size is stored in table **TABLES**
@@ -98,7 +98,7 @@ Example of this query result:
 These queries were quite useful for my personal usage. I hope it will bring some
 value to you.
 
-For this article I have used KB as measurement units. If you want to use different
+For this article, I have used KB as measurement units. If you want to use different
 measurement unit, feel free to modify these queries.
 
 If you have some questions or you know a better way, please leave a comment.

@@ -7,9 +7,9 @@ categories: rest
 image: /assets/images/common/thumbnails/java.png
 ---
 
-In this tutorial I'll show how to setup REST web service using Jersey on
-embedded Jetty server. For build tool I'll be using [Gradle](https://gradle.org/).
-Also, we will package up this application as fatjar, single executable Jar for easy deployment.
+In this tutorial, I'll show how to setup REST web service using Jersey on
+embedded Jetty server. For build tool, I'll be using [Gradle](https://gradle.org/).
+Also, we will package up this application as FatJar, single executable Jar for easy deployment.
 
 [Jersey](https://jersey.github.io/) is [JAX-RS](https://github.com/jax-rs) implementation.
 This framework allows easy development of RESTful Web services.
@@ -17,7 +17,7 @@ This framework allows easy development of RESTful Web services.
 Jetty is a lightweight HTTP server that can be easily embedded into the jar.
 
 ## Example project source code
-You can find the code used in this example in github
+You can find the code used in this example in GitHub
 [repository](https://github.com/blog-dovydasvenckus/jersey-with-embedded-jetty).
 
 ## Project structure
@@ -43,8 +43,8 @@ $ tree
 
 ```
 
-This is a quite simple project structure. Most of the files are gradle config files
-and gradle wrapper. We will be touching only 3 files: *build.gradle*, *HelloResource.java*,
+This is a quite simple project structure. Most of the files are Gradle config files
+and Gradle wrapper. We will be touching only 3 files: *build.gradle*, *HelloResource.java*,
 *JerseyApplication.java*.
 
 ## Build config
@@ -91,7 +91,7 @@ dependencies {
 }
 ```
 
-I think gradle file is pretty self explanatory. Probably only thing you should change
+I think Gradle file is pretty self-explanatory. Probably only thing you should change
 is mainClassName variable to point to your main class that will initialize Jetty server.
 
 ## Server configuration
@@ -155,7 +155,7 @@ created handler without sessions, because REST is stateless.
 
     servletContextHandler.setContextPath("/");
 
-Sets application path to root.
+Sets application path to the root.
 
     ServletHolder servletHolder = servletContextHandler.addServlet(ServletContainer.class, "/api/*");
 
@@ -167,7 +167,7 @@ will be accessible using /api/{resource} path.
             "com.dovydasvenckus.jersey.resources"
     );
 
-This is important step. You must set package where rest resources are located.
+This is an important step. You must set package where rest resources are located.
 
 ## REST resource
 
@@ -198,8 +198,8 @@ This resource is located /api/hello. And it takes single path param.
 ## Building
     ./gradlew build
 
-It should build fatjar in build/libs directory. The jar should be named {application-name}-all.jar.
-In this case jar was named jersey-with-embedded-jetty-all.jar. You can find the application name
+It should build FatJar in build/libs directory. The jar should be named {application-name}-all.jar.
+In this case, jar was named jersey-with-embedded-jetty-all.jar. You can find the application name
 in settings.gradle, under rootProject.name property.
 
 ## Running
@@ -222,11 +222,11 @@ $ curl localhost:8080/api/hello/John
 Hello John
 ```
 
-Using a linux tool curl I have send GET request to **/api/hello/John**
+Using a Linux tool curl I have send GET request to **/api/hello/John**
 and received plain text response that contains message "Hello John".
 
 ## Final thoughts
-That's it. It is pretty straight forward to create a lightweight REST API using
-Jersey and Jetty, without any heavy weight framework.
+That's it. It is pretty straightforward to create a lightweight REST API using
+Jersey and Jetty, without any heavyweight framework.
 
-If you have any questions feel free to drop them in comment section below.
+If you have any questions feel free to drop them in the comment section below.

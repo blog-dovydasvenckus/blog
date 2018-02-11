@@ -9,11 +9,11 @@ image: /assets/images/common/thumbnails/junit-logo.png
 
 From the start of my career, I have preferred Spock for writing tests.
 While working with legacy systems I have written few JUnit tests here and there.
-But my knowledge JUnit, Hamcrest and Mockito is fairly limited.
+But my knowledge JUnit, Hamcrest, and Mockito is fairly limited.
 
-At work I had a task that involved teaching intern how to write unit tests using JUnit.
+At work, I had a task that involved teaching intern how to write unit tests using JUnit.
 
-After setting up gradle project I have noticed, that failed assertThat statements
+After setting up Gradle project I have noticed, that failed assertThat statements
  threw **java.lang.NoSuchMethodError** exception with cryptic message.
 
     java.lang.NoSuchMethodError: org.hamcrest.Matcher.describeMismatch(Ljava/lang/Object;Lorg/hamcrest/Description;)V
@@ -59,12 +59,12 @@ Failed assertThat threw this cryptic exception.
 
 ## Solution
 
-It fails because Mockito 1 depends on Hamcrest and JUnit has Hamcrest as transient dependency.
+It fails because Mockito 1 depends on Hamcrest and JUnit has Hamcrest as a transient dependency.
 So Mockito library starts using Hamcrest from JUnit. This causes described failure.
 
 ### Solution 1. You should be using Mockito 2
 In this example, I have imported Mockito 1 version, because from Maven
-repository I have accidently selected mockito-all.jar. You should use mockito-core
+repository I have accidentally selected mockito-all.jar. You should use mockito-core
 jar to get Mockito 2. Mockito 2 does not depend on Hamcrest so this issue is resolved simply
 by upgrading to Mockito 2.
 
@@ -93,7 +93,7 @@ Expected: is <3>
 Failed assert messages are solved by both of the solutions.
 
 ## Final thoughts
-Both of these solutions, fixes the problem.
+Both of these solutions fixes the problem.
 
 Even if you're working with legacy project I highly recommend upgrading to
 the latest testing framework version.
@@ -102,7 +102,7 @@ be harder in future, when the new framework version is released.
 
 My coworker has migrated quite a large project to Hamcrest 2.0 and Mockito 2.1,
 that is actively developed. He managed to upgrade Mockito and Hamcrest versions
-in a short period of time. There were more than 500 test files that had to be updated,
+in a short period of time. There were more than 500 test files that had to be updated
 because some functionality was removed or changed. This migration turned out fine,
 without any major problems.
 
@@ -112,7 +112,7 @@ so it won't be a big surprise for them.
 * When undertaking such task be prepared for merge conflicts. You might need to
   merge your pull request on weekend, if development is too active on working days.
 * Also, you might piss off some developers, that have OPEN pull requests,
-  because they might get merge conflicts, after your changes were merged to master.
-  But I wouldn't worry too much about that, because you have done positive change to project.
+  because they might get merge conflicts after your changes were merged to master.
+  But I wouldn't worry too much about that because you have done positive change to project.
 
-If you have any questions or insights feel free to leave comment.
+If you have any questions or insights feel free to leave a comment.

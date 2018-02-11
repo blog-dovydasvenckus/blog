@@ -67,8 +67,8 @@ Searching for client in database
 
 ## Conclusion
 It is really easy to introduce bug because of `orElse` value is always calculated.
-This example was taken from real-world situation. I have almost merged code which
-persisted a new entity to the database, even when entry with the same name have already existed.
+This example was taken from a real-world situation. I have almost merged code which
+persisted a new entity to the database, even when an entry with the same name has already existed.
 Thankfully integration tests have caught it.
 
 Use `orElse` mindfully, I would recommend using `orElse` only when value is

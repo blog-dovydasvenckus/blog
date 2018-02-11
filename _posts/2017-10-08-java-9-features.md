@@ -18,7 +18,7 @@ Most notable feature in this release is Java module system a.k.a "Jigsaw".
 Module system should solve two problems: encapsulation and dependency declaration.
 
 Before Java 9 all public classes loaded from external Jars were accessible in
-the project. Because of this reason it is easy to accidentally expose API's that
+the project. Because of this reason, it is easy to accidentally expose API's that
 are meant to be used privately. The new module system addresses it by defining exposed
 packages in `module-info.java` file.
 
@@ -42,13 +42,13 @@ module com.dovydasvenckus.ledger {
 
 In this example, we have defined budgeting module that exposes only classes from
 `com.dovydasvenckus.budget` package. Exposed package children are not exposed,
-for example classes in `com.dovydasvenckus.budget.helper` package won't be exposed
+for example, classes in `com.dovydasvenckus.budget.helper` package won't be exposed
 to modules that import it.
 
 In this example, I have also defined dependency our budget module depends on ledger
 module. Ledger module exposes only classes in `com.dovydasvenckus.ledger` package.
 
-Also JDK was modularized with this release, using **jlink** tool you can create
+Also, JDK was modularized with this release, using **jlink** tool you can create
 minimal JRE, that will be deployed with your application. If your application
 does not require java.sql module you can make JRE that won't include it.
 It makes sense to deploy lightweight JRE on embedded devices or when we are using
@@ -59,19 +59,19 @@ This topic is too wide to describe in this blog post, so I highly recommend
 to visit official documentation [OpenJDK Jigsaw quick start](http://openjdk.java.net/projects/jigsaw/quick-start).
 
 ### HTTP 2 client
-Major browsers supported HTTP/2 for a long time, finally Java have caught up and
+Major browsers supported HTTP/2 for a long time, finally Java has caught up and
 introduced HTTP/2 client. This new client also supports WebSockets.
 
 This module is released in incubation state. You can use incubating modules now, but
 they will be officially released in a future release.
 In JDK10 it should be moved from `jdk.incubator.httpclient` to `java.httpclient` module.
-Also JDK10 might introduce breaking changes.
+Also, JDK10 might introduce breaking changes.
 
 ### Java shell (Jshell)
-Finally Java has introduced REPL(Read Evaluate Print Loop) shell that allows to
-run Java commands interactively. Sometimes it is really usefull to test code snippet,
-for this purpose I have used GroovyConsole. But GroovyConsole is not perfect, because
-it uses Groovy language which is superset of Java.
+Finally, Java has introduced REPL(Read Evaluate Print Loop) shell that allows running
+ Java commands interactively. Sometimes it is really useful to test code snippet,
+for this purpose I have used GroovyConsole. But GroovyConsole is not perfect because
+it uses Groovy language which is a superset of Java.
 
 ```groovy
 jshell> String hello = "Hello World"
@@ -80,23 +80,23 @@ jshell> System.out.println(hello)
 Hello World
 ```
 
-As you can see commands does not require semicolon to execute them.
-Also shell suports **Tab** autocomplete, enjoy it :).
+As you can see commands does not require a semicolon to execute them.
+Also, shell supports **Tab** autocomplete, enjoy it :).
 
-Also I had hope that shell would allow to execute commands from java file. But it
-does not support this feature. In my opinion it would be nice to be able to write
+Also, I had hope that shell would allow executing commands from a Java file. But it
+does not support this feature. In my opinion, it would be nice to be able to write
 Java script files and execute them using single command.
-So for Java scripting I'll stick with Nashorn or Groovy.
+So for Java scripting, I'll stick with Nashorn or Groovy.
 
 
 ### JavaDoc search
 <img src="/assets/images/2017-10-08-java-9-features/java-doc-search.png">
 
-This improvement is small, but convenient. Now Java docs support auto completable
-search. Before this feature it was painfully slow to find something in Java API
-documentation, because you had to navigate using mouse and you had to know
+This improvement is small but convenient. Now Java docs support auto completable
+search. Before this feature, it was painfully slow to find something in Java API
+documentation because you had to navigate using mouse and you had to know
 in which package class resides. Whenever I was searching for class
-I have always googled, because it was faster way to navigate to class.
+I have always googled because it was a faster way to navigate to class.
 
 ### Stream improvements
 One of my favorite features of Java 8 was Streams. It changed the way many people write
@@ -113,7 +113,7 @@ Stream.iterate(0, i -> i < 100, i -> i + 1)
   .forEach(System.out::println);
 ```
 * **OfNullable** Lets create stream without checking if element is null.
-  When elemnt is non null it returns stream with single element, else it returns
+  When element is non null it returns stream with single element, else it returns
   empty Stream.
 
 ### Easier creation of immutable Collections
@@ -136,7 +136,7 @@ Three new methods were added to Optional class.
   Same as ifPresent, but includes method to execute when optional empty.
 *	`Optional<T> or(Supplier<? extends Optional<? extends T>> supplier)`.
 It is similar to orElseGet, but instead of returning T object it returns
-Optional<T>. Because of that you can chain multiple or() methods.
+Optional<T>. Because of that, you can chain multiple or() methods.
 
 ```java
 Person nameLess = new Person("45122", null, null);
@@ -147,12 +147,12 @@ Optional<String> firstName = Optional.of(nameLess)
         .or(() -> externalNameResolver.resolveName(nameLess.getPersonalId()));
 ```
 
-If person have missing name, then it will call localNameResolver.resolveName().
+If person has missing name, then it will call localNameResolver.resolveName().
 If this method returns empty Optional, then it will call externalNameResolver.resolveName().
 
 
 ### Private methods in interfaces
-Java 8 have introduced default method in interfaces. Java 9 added ability to add
+Java 8 has introduced default method in interfaces. Java 9 added an ability to add
 private method to interfaces. So if two default methods use duplicated code,
 you can move that code to private method.
 
@@ -178,7 +178,7 @@ Java 9 has some improvements to processes API. It has added a few method to
 deal with system processes.
 
 For example, it was painful to get PID, you had to write boilerplate code that
-was OS dependant. Now it is easily retrievable using a single command.
+was OS dependent. Now it is easily retrievable using a single command.
 
 ```java
 ProcessHandle currentProcess = ProcessHandle.current();
@@ -198,9 +198,9 @@ These interfaces include:
 
 ### Minor changes that probably won't be noticed
 * Now you can get current java version by using *java --version*, instead of
- *-version*. This operation will be compliant with unix philosophy,
+ *-version*. This operation will be compliant with Unix philosophy
  because verbal operations should have two dashes before and
- short hand operations should have single dash.
+ short hand operations should have single a dash.
 * Underscore character is reserved. You can't create variable `_` anymore.
   [JEP 213](http://openjdk.java.net/jeps/213)
 * Stack walking API [JEP 259](http://openjdk.java.net/jeps/259)
@@ -215,9 +215,9 @@ These interfaces include:
 
 ## Conclusion
 I have mentioned most notable features. There are probably plenty features
-that I have missed. For me Java 9 release is quite an exciting one.
+that I have missed. For me, Java 9 release is quite an exciting one.
 
- Modularization is a hudge feature and in my opinion, it will take quite some time
+ Modularization is a huge feature and in my opinion, it will take quite some time
  to it being widely adopted.
 
  Besides modularization Java 9 includes many small handy features. I'll try to

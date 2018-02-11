@@ -15,7 +15,7 @@ To improve readability I started replacing lambdas with method references.
 After refactoring, and testing I noticed, that button click action resulted in NullPointerException.
 
 ## Example
-In this example I'll try to show the difference between lambda expresion and method reference.
+In this example, I'll try to show the difference between lambda expression and method reference.
 
 ### Lambda
 {% highlight java %}
@@ -60,6 +60,6 @@ Exception in thread "main" java.lang.NullPointerException
 {% endhighlight %}
 
 ## Summary
-Object must be initialized before using method reference operator on it.
+An object must be initialized before using method reference operator on it.
 
-Lambdas are bit different, they can access variable from outside their scope.
+Lambdas are bit different, they can access a variable from outside their scope.

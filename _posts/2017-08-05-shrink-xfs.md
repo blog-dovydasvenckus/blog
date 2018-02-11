@@ -30,7 +30,7 @@ but it saved my hide, when my root partition was way too small.
 5. Edit fstab
 
 ### Example
-For this example, I have created virtual machine with Ubuntu installation.
+For this example, I have created a virtual machine with Ubuntu installation.
 There is /home (/dev/sda5) and / (/dev/sda1) partitions. In this case we will be shrinking home
 partition from ~8.6GB to 4GB.
 
@@ -69,10 +69,10 @@ to back up our /home partition.
 Probably you could shrink home partition using live system.
 But if you would like to shrink root partition you could not do it on a live system.
 
-So in this example I will demonstrate a method that should work even with resizing root partition.
-For this to work you'll need to boot not from your hardrive, but from Live USB stick or CD.
+So in this example, I will demonstrate a method that should work even with resizing root partition.
+For this to work you'll need to boot not from your hard drive, but from Live USB stick or CD.
 
-In this case I have chosen to use **Live Ubuntu CD**.
+In this case, I have chosen to use **Live Ubuntu CD**.
 
 When you are running from the Live CD open terminal and change to root, because most
 of the commands require root access.
@@ -81,7 +81,7 @@ of the commands require root access.
 
 ### Backing up image
 For creating disk images I have chosen to use [**xfsdump**](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/xfsbackuprestore.html) application. It allows
-to create backup of mounted file system. In most distributions **xfsdump** and
+creating a backup of mounted file system. In most distributions **xfsdump** and
 **xfsrestore** are not installed by default.
 
 Install **xfsdump** and **xfsrestore**:
@@ -92,8 +92,8 @@ Before making an image of home partition we need to mount it.
     mkdir /mnt/home
     mount /dev/sda5 /mnt/home
 
-Also we need to mount destination partition. This partition should be big enough
-to hold backup image.
+Also, we need to mount destination partition. This partition should be big enough
+to hold the backup image.
 
     mkdir /mnt/external
     mount /dev/sdb1 /mnt/external
@@ -102,10 +102,10 @@ Backup image creation:
 
     xfsdump -l 0 -f /mnt/external/backup /mnt/home
 
-When running xfs dump you must specify backup file name. In this case image name is
+When running xfs dump you must specify the backup file name. In this case image name is
 **backup**.
 
-After running this command you'll be asked to enter label of backup. In this case
+After running this command you'll be asked to enter the label of backup. In this case
 I have used "home" as label.
 
 ### Delete old partition
@@ -114,10 +114,10 @@ Unmount home partition.
     umount /mnt/home
 
 
-To delete partition you can use your favorite application. It can be GParted or
-other tool.
+To delete the partition you can use your favorite application. It can be GParted or
+another tool.
 
-In this example I have used interactive commandline utility fdisk.
+In this example, I have used interactive command line utility fdisk.
 
     fdisk /dev/sda
     Welcome to fdisk (util-linux 2.29).
@@ -214,7 +214,7 @@ home partition UUID in fstab with your new partitions UUID.
     vim /mnt/root/etc/fstab
 
 
-### Summarry
-That's it, the solution was a little bit long winded, but at least it works.
+### Summary
+That's it, the solution was a little bit long-winded, but at least it works.
 If you know a simpler way to resize XFS partition feel free to share it in the
 comments section.
