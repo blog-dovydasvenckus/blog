@@ -4,6 +4,7 @@ title:  "In-depth look at Java try-with-resource"
 description: Java try-with-resource. How to implement resources that will be closed automatically.
 date:   2017-12-27 23:45:00 +0300
 categories: java
+tags: java java9
 image: /assets/images/common/thumbnails/java.png
 ---
 

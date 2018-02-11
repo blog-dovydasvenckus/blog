@@ -4,6 +4,7 @@ title:  "Being lazy in Java with orElseGet"
 description: Lazily working with Optional and avoiding pitfalls of orElse
 date:   2017-12-30 23:59:59 +0300
 categories: java
+tags: java java8 tips
 image: /assets/images/common/thumbnails/java.png
 ---
 

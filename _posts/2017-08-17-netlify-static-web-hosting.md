@@ -4,6 +4,7 @@ title:  "Netlify static web site hosting"
 description: Resons why I have chose Netlify to host generated static web sites.
 date:   2017-08-17 22:52:15 +0300
 categories: web-hosting
+tags: jekyll static-webpages
 ---
 
 Static site generators are really good for blogging sites. You generate site once

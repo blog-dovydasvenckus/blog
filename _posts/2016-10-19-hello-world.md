@@ -3,6 +3,7 @@ layout: post
 title:  "Hello world!"
 date:   2016-10-19 22:07:59 +0300
 categories: update
+tags: hello-world update
 ---
 I always planned to run my own tech blog. It's funny how long it took me to get started.
 

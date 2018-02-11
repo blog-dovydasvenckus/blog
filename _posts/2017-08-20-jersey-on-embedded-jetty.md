@@ -4,6 +4,7 @@ title:  "REST API using Jersey on embedded Jetty server"
 description: Tutorial for setting up lightweight REST API using Jersey, Jetty and Gradle.
 date:   2017-08-20 17:00:00 +0300
 categories: rest
+tags: java jersey jetty rest
 image: /assets/images/common/thumbnails/java.png
 ---
 
