@@ -99,8 +99,8 @@ dependencies {
 I think Gradle file is pretty self-explanatory. Probably only thing you should change
 is mainClassName variable to point to your main class that will initialize Jetty server.
 
-JSON parsing is done by using popular Jackson library. Including `jersey-media-json-jackson`
-package in classpath will take care of JSON marshaling and unmarshaling.
+JSON parsing is done by using popular [Jackson](https://github.com/FasterXML/jackson) library.
+Including `jersey-media-json-jackson` package in classpath will take care of JSON marshaling and unmarshaling.
 
 ## Server configuration
 In JerseyApplication I have configured Jetty and Jersey.
