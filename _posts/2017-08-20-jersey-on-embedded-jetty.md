@@ -4,7 +4,7 @@ title:  "REST API using Jersey on embedded Jetty server"
 description: Tutorial for setting up lightweight REST API using Jersey, Jetty and Gradle.
 date:   2017-08-20 17:00:00 +0300
 categories: rest
-tags: java jersey jetty rest
+tags: java jersey jetty rest jackson
 image: /assets/images/common/thumbnails/java.png
 ---
 
@@ -24,6 +24,7 @@ You can find the code used in this example in GitHub
 ## Project structure
 ```bash
 $ tree
+.
 ├── build.gradle
 ├── gradle
 │   └── wrapper
@@ -38,6 +39,8 @@ $ tree
             └── com
                 └── dovydasvenckus
                     └── jersey
+                        ├── greeting
+                        │   └── Greeting.java
                         ├── JerseyApplication.java
                         └── resources
                             └── HelloResource.java
@@ -45,7 +48,7 @@ $ tree
 ```
 
 This is a quite simple project structure. Most of the files are Gradle config files
-and Gradle wrapper. We will be touching only 3 files: *build.gradle*, *HelloResource.java*,
+and Gradle wrapper. We will be touching only 4 files: *build.gradle*, *Greeting.java*, *HelloResource.java*,
 *JerseyApplication.java*.
 
 ## Build config
@@ -89,11 +92,15 @@ dependencies {
     compile "org.glassfish.jersey.core:jersey-server:${jerseyVersion}"
     compile "org.glassfish.jersey.containers:jersey-container-servlet-core:${jerseyVersion}"
     compile "org.glassfish.jersey.containers:jersey-container-jetty-http:${jerseyVersion}"
+    compile "org.glassfish.jersey.media:jersey-media-json-jackson:${jerseyVersion}"
 }
 ```
 
 I think Gradle file is pretty self-explanatory. Probably only thing you should change
 is mainClassName variable to point to your main class that will initialize Jetty server.
+
+JSON parsing is done by using popular Jackson library. Including `jersey-media-json-jackson`
+package in classpath will take care of JSON marshaling and unmarshaling.
 
 ## Server configuration
 In JerseyApplication I have configured Jetty and Jersey.
@@ -170,31 +177,74 @@ will be accessible using /api/{resource} path.
 
 This is an important step. You must set package where rest resources are located.
 
-## REST resource
+## Greeting POJO
+This simple [POJO](https://en.wikipedia.org/wiki/Plain_old_Java_object) will
+be used as transfer class. It will be marshaled to JSON and unmarshaled from JSON.
 
 ```java
-package com.dovydasvenckus.jersey;
+package com.dovydasvenckus.jersey.greeting;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+public class Greeting {
 
-@Path("/hello")
-public class HelloController {
+    private String message;
 
-    @GET
-    @Path("/{param}")
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getMessage(@PathParam("param") String msg) {
-        return "Hello " + msg + "\n";
+    Greeting() {
+
+    }
+
+    public Greeting(String name) {
+        this.message = getGreeting(name);
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String name) {
+        this.message = name;
+    }
+
+    private String getGreeting(String name) {
+        return "Hello " + name;
     }
 }
 
 ```
 
-This resource is located /api/hello. And it takes single path param.
+You must create default no args constructors for classes that will be marshaled
+and unmarshaled.
+
+## REST resource
+
+```java
+package com.dovydasvenckus.jersey.resources;
+
+import com.dovydasvenckus.jersey.greeting.Greeting;
+
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+
+@Path("/hello")
+public class HelloResource {
+
+    @GET
+    @Path("/{param}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Greeting hello(@PathParam("param") String name) {
+        return new Greeting(name);
+    }
+
+    @POST
+    @Produces(MediaType.TEXT_PLAIN)
+    public String helloUsingJson(Greeting greeting) {
+        return greeting.getMessage() + "\n";
+    }
+}
+```
+
+This resource is located `/api/hello`. There are two endpoints.
+First uses GET method, takes string path param and returns JSON.
+Second uses POST method, parses JSON and returns plain text.
 
 ## Building
     ./gradlew build
@@ -218,13 +268,22 @@ It should start successfully on port 8080.
 ```
 
 ## Testing web service
+### JSON unparsing
 ```bash
 $ curl localhost:8080/api/hello/John
+{"message":"Hello John"}
+```
+
+Using a Linux tool curl I have send GET request to `/api/hello/John`
+and received JSON response that contains message "Hello John".
+
+### JSON parsing
+```bash
+$ curl -H "Content-Type: application/json" -X POST -d '{"message": "Hello John"}' http://localhost:8080/api/hello
 Hello John
 ```
 
-Using a Linux tool curl I have send GET request to **/api/hello/John**
-and received plain text response that contains message "Hello John".
+Sending POST method with JSON body returns correct plain text response.
 
 ## Final thoughts
 That's it. It is pretty straightforward to create a lightweight REST API using
