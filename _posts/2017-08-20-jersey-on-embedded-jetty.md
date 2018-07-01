@@ -65,7 +65,7 @@ mainClassName = 'com.dovydasvenckus.jersey.JerseyApplication'
 ext {
     slf4jVersion = '1.7.25'
     jettyVersion = '9.4.6.v20170531'
-    jerseyVersion = '2.25.1'
+    jerseyVersion = '2.27'
 }
 
 buildscript {
@@ -93,6 +93,7 @@ dependencies {
     compile "org.glassfish.jersey.containers:jersey-container-servlet-core:${jerseyVersion}"
     compile "org.glassfish.jersey.containers:jersey-container-jetty-http:${jerseyVersion}"
     compile "org.glassfish.jersey.media:jersey-media-json-jackson:${jerseyVersion}"
+    compile "org.glassfish.jersey.inject:jersey-hk2:${jerseyVersion}"
 }
 ```
 
