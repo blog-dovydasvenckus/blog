@@ -6,6 +6,7 @@ date:   2018-08-20 23:00:00 +0300
 categories: linux
 tags: firefox gtk gnome theme
 image: /assets/images/common/thumbnails/tux.png
+twitter_card.image: /assets/images/common/thumbnails/tux.png
 ---
 
 When using Firefox on a computer with dark GTK theme, Firefox renders input fields using a dark theme.
