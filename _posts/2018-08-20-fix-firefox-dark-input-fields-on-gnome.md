@@ -34,7 +34,7 @@ For some time I have felt uneasy, because of a rise of such threats.
 Recently I have stumbled upon a way how to solve this issue without browser plugin.
 
 1. In Firefox URL bar enter about:config.
-2. Create new String value with `widget.content.gtk-theme-override` (Right click > new > String)
+2. Create new String value with name `widget.content.gtk-theme-override` (Right click > new > String)
 3. Set value to `Adwaita:light` (if your distribution does not use GNOME desktop, you should use a name of light GTK theme which is installed on your PC)
 4. Restart browser
 
