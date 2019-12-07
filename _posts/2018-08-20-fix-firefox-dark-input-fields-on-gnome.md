@@ -1,13 +1,15 @@
 ---
 layout: post
-title:  "Fix Firefox unreadable dark input fields on GNOME"
+title: "Fix Firefox unreadable dark input fields on GNOME"
 description: Using dark GTK Firefox renders input fields as dark. In some cases input fields are unreadable. This guide will help you solve this problem by setting Firefox to use a light theme
-date:   2018-08-20 23:00:00 +0300
+date: 2018-08-20 23:00:00 +0300
 categories: linux
 tags: firefox gtk gnome theme
 image: /assets/images/common/thumbnails/tux.png
 twitter_card.image: /assets/images/common/thumbnails/tux.png
 ---
+
+**This issue seems to be solved in Firefox 67 version:** [1527048](https://bugzilla.mozilla.org/show_bug.cgi?id=1527048)
 
 When using Firefox on a computer with dark GTK theme, Firefox renders input fields using a dark theme.
 In some cases, input in fields are unreadable, because field is dark and the text is black.
@@ -15,6 +17,7 @@ In some cases, input in fields are unreadable, because field is dark and the tex
 Most of the pages work fine, because they have CSS themed form fields, which override the default GTK theme.
 
 ### Before:
+
 <img src="/assets/images/2018-08-20-2018-08-20-fix-firefox-dark-input-fields-on-gnome/firefox-form-bad.png">
 
 <br><br>
@@ -22,10 +25,11 @@ Most of the pages work fine, because they have CSS themed form fields, which ove
 <img src="/assets/images/2018-08-20-2018-08-20-fix-firefox-dark-input-fields-on-gnome/firefox-form-bad-selected.png">
 
 ### After:
+
 <img src="/assets/images/2018-08-20-2018-08-20-fix-firefox-dark-input-fields-on-gnome/firefox-fixed.png">
 
-
 ## Solution
+
 For the last couple of years, I have used a browser plugin to fix field rendering.
 But lately, there was a rise in browser plugins which were sold to unethical companies,
 which modified plugins to spy on user data or inject custom ads.
