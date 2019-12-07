@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 ruby RUBY_VERSION
 
-gem "jekyll"
+gem "jekyll", "3.8.6"
 gem "jekyll-whiteglass"
 
 group :jekyll_plugins do
