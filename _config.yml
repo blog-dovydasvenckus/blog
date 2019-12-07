@@ -21,6 +21,8 @@ plugins:
 exclude:
   - Gemfile
   - Gemfile.lock
+include:
+  - _redirects
 
 permalink: /:categories/:year/:month/:day/:title/
 paginate_path: /posts/:num/
