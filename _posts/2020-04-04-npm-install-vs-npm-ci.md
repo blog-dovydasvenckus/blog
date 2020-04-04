@@ -2,7 +2,7 @@
 layout: post
 title: "NPM ci vs install"
 description: NPM ci and install command differences
-date: 2020-04-04 19:10:00 +0300
+date: 2020-04-04 19:30:00 +0300
 categories: javascript
 tags: node npm javascript
 ---
