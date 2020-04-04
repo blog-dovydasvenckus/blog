@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Netlify static web site hosting"
+title: "Netlify static web site hosting"
 description: Resons why I have chose Netlify to host generated static web sites.
-date:   2017-08-17 22:52:15 +0300
+date: 2017-08-17 22:52:15 +0300
 categories: web-hosting
 tags: jekyll static-webpages
 ---
@@ -14,6 +14,7 @@ There are at least a few dozens of static site generators. For this blog, I have
 to use Jekyll, because it is quite popular and well documented.
 
 ## Why should you consider static websites
+
 Static site load times are fast because you don't waste time to render a web page for every request.
 Also by using a static site, you totally skip other layers like database.
 
@@ -33,6 +34,7 @@ your code to the remote, it triggers a command to generate static site and after
 period of time, your changes are live.
 
 ## Why I have chosen Netlify as my blog hosting?
+
 [Netlify](https://netlify.com) CDN. Netlify hosts your website in multiple servers that
 are located in different geographical locations. This minimizes load times for users
 because content is a served from the server that is nearest to their geographical position.
@@ -48,10 +50,11 @@ It even has a prerendering option for single page apps. It should help Google we
 crawlers to scan your dynamic site.
 
 One click SSL certificate configuration using Let's encrypt. I'm a huge fan of
-[Let's encrypt].
+[Let's encrypt](/security/2017/08/16/lets-encrypt/).
 
 And all these features are accessible for free.
 
 ## Final thoughts
+
 I only scratched the surface of features that Netlify provides. But I really like
 the simplicity and ease of use of their service.
