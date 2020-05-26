@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Shrinking XFS partition"
+title: "Shrinking XFS partition"
 description: Shrinking XFS partition on linux (Ubuntu).
-date:   2017-08-05 23:59:59 +0300
+date: 2017-08-05 23:59:59 +0300
 categories: linux
 tags: linux xfs filesystem
 image: /assets/images/common/thumbnails/tux.png
@@ -19,8 +19,8 @@ To manipulate XFS partitions you might need to install **xfsprogs** package. You
 using [xfs_growfs](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Storage_Administration_Guide/xfsgrow.html).
 But unlike EXT4 file system there is no way to shrink partition. Good luck you're fucked.
 
-
 ## Solution
+
 But there is a solution how to shrink partition. It's not a straightforward solution,
 but it saved my hide, when my root partition was way too small.
 
@@ -31,6 +31,7 @@ but it saved my hide, when my root partition was way too small.
 5. Edit fstab
 
 ### Example
+
 For this example, I have created a virtual machine with Ubuntu installation.
 There is /home (/dev/sda5) and / (/dev/sda1) partitions. In this case we will be shrinking home
 partition from ~8.6GB to 4GB.
@@ -67,6 +68,7 @@ As you can see from partition list, there is /dev/sdb1 this partition will be us
 to back up our /home partition.
 
 ### Preparation
+
 Probably you could shrink home partition using live system.
 But if you would like to shrink root partition you could not do it on a live system.
 
@@ -81,12 +83,13 @@ of the commands require root access.
     sudo su
 
 ### Backing up image
+
 For creating disk images I have chosen to use [**xfsdump**](https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Storage_Administration_Guide/xfsbackuprestore.html) application. It allows
 creating a backup of mounted file system. In most distributions **xfsdump** and
 **xfsrestore** are not installed by default.
 
 Install **xfsdump** and **xfsrestore**:
-   apt-get install xfsdump
+apt-get install xfsdump
 
 Before making an image of home partition we need to mount it.
 
@@ -110,10 +113,10 @@ After running this command you'll be asked to enter the label of backup. In this
 I have used "home" as label.
 
 ### Delete old partition
+
 Unmount home partition.
 
     umount /mnt/home
-
 
 To delete the partition you can use your favorite application. It can be GParted or
 another tool.
@@ -136,6 +139,7 @@ In this example, I have used interactive command line utility fdisk.
 Press **w** to write changes to disk.
 
 ### Create new smaller partition
+
 To create new partition you can use any tool you like, but for this example I have
 chose fdisk.
 
@@ -165,6 +169,7 @@ Mount partition:
      mount /dev/sda5 /mnt/home
 
 ### Restore image
+
 To restore XFS partition you need to know session ID. To find out image session id
 run this command:
 
@@ -178,7 +183,7 @@ Output of this command:
 
 So in our case session id is 7a80f19f-ab34-4598-bf8f-dede406d50dc.
 
-Run xfsrestore:
+Run `xfsrestore`:
 
     xfsrestore -f /mnt/external/backup -S 7a80f19f-ab34-4598-bf8f-dede406d50dc /mnt/home
 
@@ -192,13 +197,15 @@ Output:
     xfsrestore: Restore Status: SUCCESS
 
 ### Edit fstab
-When you are shrinking /home or root partition you need to take into account that
-these partitions are mounted via fstab using UUID. New partition will have different
-UUID, because of that your system might not boot.
 
-Before rebooting you should mount your root file system and edit fstab file.
+The new partition will have different UUID, because of that your system might **not boot**.
 
-Run blkid to find out current UUID of disk.
+When you are shrinking **/home**, **/root** or other automatically mounted partition
+you'll need to update **fstab** with new partition UUID.
+
+Before rebooting mount your root file system and edit fstab file.
+
+Run `blkid` to find out current UUID of disk.
 
     blkid
     /dev/sr0: UUID="2017-04-12-03-44-04-00" LABEL="Ubuntu 17.04 amd64" TYPE="iso9660" PTUUID="1b571474" PTTYPE="dos"
@@ -207,15 +214,15 @@ Run blkid to find out current UUID of disk.
     /dev/sda5: UUID="f359a7c4-bc72-416d-a50a-5869792c2832" TYPE="xfs" PARTUUID="577dacac-05"
     /dev/sdb1: UUID="0882a8db-ae76-44de-9bbe-a453c727ff50" TYPE="xfs" PARTUUID="9f306132-b5fc-4bd5-8a85-a3f9d820276a"
 
-In this case new UUID is 0882a8db-ae76-44de-9bbe-a453c727ff50. You should replace
-home partition UUID in fstab with your new partitions UUID.
+In this case new UUID is `0882a8db-ae76-44de-9bbe-a453c727ff50`. You should replace
+your partition UUID in fstab with your new partitions UUID.
 
     mkdir /mnt/root
     mount /dev/sda1 /mnt/root
     vim /mnt/root/etc/fstab
 
-
 ### Summary
+
 That's it, the solution was a little bit long-winded, but at least it works.
 If you know a simpler way to resize XFS partition feel free to share it in the
 comments section.
