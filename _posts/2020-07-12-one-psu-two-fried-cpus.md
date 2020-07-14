@@ -57,6 +57,10 @@ A local retailer repair center has called me and informed me that PSU is defecti
 
 Received a full refund for PSU.
 
+### Sunday, July 12
+
+Opened ticket on Fractal Design support system regarding damaged parts due to faulty product
+
 ## Conclusion
 
 I was excited about this upgrade, but it turned out as a really frustrating one.
