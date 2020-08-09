@@ -61,6 +61,14 @@ Received a full refund for PSU.
 
 Opened ticket on Fractal Design support system regarding damaged parts due to faulty product
 
+### Tuesday, July 21
+
+Received first response from Fractal support. They informed me that they need to inspect PSU,
+to confirm that parts were fried by PSU.
+
+I have asked them to inspect it by serial number because it was already returned to Fractals
+repair center by my local retailer.
+
 ## Conclusion
 
 I was excited about this upgrade, but it turned out as a really frustrating one.
