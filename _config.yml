@@ -4,7 +4,6 @@ description: Thoughts on java, linux and other geeky topics.
 baseurl: ""
 url: "https://www.dovydasvenckus.dev"
 
-google_analytics: UA-73434879-1
 comments: true
 disqus:
   shortname: dovydasvenckus
