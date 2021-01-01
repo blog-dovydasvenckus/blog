@@ -69,6 +69,14 @@ to confirm that parts were fried by PSU.
 I have asked them to inspect it by serial number because it was already returned to Fractals
 repair center by my local retailer.
 
+### Friday, September 11
+
+Received reply after almost two months of waiting. I expected a delay due to the ongoing pandemic, but not two months.
+
+Because they could not be certain that CPU fried my CPU's, they didn't refund me the cost of the CPU's.
+Instead, they offered to choose any product from their lineup. And I have chosen ITX case with the worst
+cooling potential a.k.a. Fractal Design Era Itx. But I'm a sucker for small cases, especially with wooden panels.
+
 ## Conclusion
 
 I was excited about this upgrade, but it turned out as a really frustrating one.
@@ -76,8 +84,6 @@ I have spent a significant amount of time trying to trace and isolate not workin
 And for almost past two month's I have lived with crappy CPU, with noticeably lower multitasking performance.
 And on top of that, I have lost perfectly functioning parts that I bought with my hard-earned money.
 
-But on the bright side, I will have reason to upgrade to AMD Ryzen 4000 series CPU, when they come out.
-
-I have contacted Fractal design support about fried CPU's by their product. I doubt that I'll get any compensation.
+But on the bright side, I have a new case and a reason to upgrade to AMD Ryzen 5000 series CPU.
 
 **But I'll keep updating this blog post with my experience with their support.**
