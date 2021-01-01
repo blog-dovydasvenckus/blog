@@ -5,8 +5,6 @@ baseurl: ""
 url: "https://www.dovydasvenckus.dev"
 
 comments: true
-disqus:
-  shortname: dovydasvenckus
 
 twitter_username: dovydasvenck
 
